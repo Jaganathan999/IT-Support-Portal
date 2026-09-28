@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT Support Desk</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">IT</div>
+
+                <div>
+                    <h2>Support Desk</h2>
+                    <span>IT Help Center</span>
+                </div>
+            </div>
+
+            <nav>
+
+                <a href="#dashboard" class="active">
+                    🏠 Dashboard
+                </a>
+
+                <a href="#issues">
+                    🛠️ Troubleshooting
+                </a>
+
+                <a href="#support">
+                    🎫 Support Ticket
+                </a>
+
+                <a href="#status">
+                    📋 Ticket Status
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Technical Support</p>
+                <span>Help Desk Portal</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Top Bar -->
+
+            <header class="topbar">
+
+                <div>
+                    <p class="welcome">WELCOME BACK</p>
+                    <h1>IT Support Dashboard</h1>
+                </div>
+
+                <div class="support-status">
+                    <span class="status-dot"></span>
+                    Support Online
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard Cards -->
+
+            <section id="dashboard" class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🎫</div>
+
+                    <div>
+                        <span>Support Tickets</span>
+                        <h2>01</h2>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🔧</div>
+
+                    <div>
+                        <span>Issues Available</span>
+                        <h2>06</h2>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="card-icon">✅</div>
+
+                    <div>
+                        <span>Support Status</span>
+                        <h2>Active</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Search -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <h2>Search Technical Issue</h2>
+                        <p>Search for a common technical problem.</p>
+                    </div>
+
+                </div>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Example: Wi-Fi, printer, sound..."
+                    >
+
+                    <button onclick="searchIssue()">
+                        Search Issue
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Issues -->
+
+            <section id="issues" class="panel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <h2>Common Technical Issues</h2>
+                        <p>Select an issue to view troubleshooting steps.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="issue-container">
+
+                    <div class="issue-card">
+                        <div class="issue-icon">🌐</div>
+
+                        <h3>Network / Wi-Fi</h3>
+
+                        <p>
+                            Internet connection and Wi-Fi problems.
+                        </p>
+
+                        <button onclick="showSolution('network')">
+                            View Solution →
+                        </button>
+                    </div>
+
+
+                    <div class="issue-card">
+                        <div class="issue-icon">💻</div>
+
+                        <h3>Windows Issues</h3>
+
+                        <p>
+                            Common Windows troubleshooting problems.
+                        </p>
+
+                        <button onclick="showSolution('windows')">
+                            View Solution →
+                        </button>
+                    </div>
+
+
+                    <div class="issue-card">
+                        <div class="issue-icon">🖨️</div>
+
+                        <h3>Printer Issues</h3>
+
+                        <p>
+                            Printer connection and printing problems.
+                        </p>
+
+                        <button onclick="showSolution('printer')">
+                            View Solution →
+                        </button>
+                    </div>
+
+
+                    <div class="issue-card">
+                        <div class="issue-icon">🔊</div>
+
+                        <h3>Sound Issues</h3>
+
+                        <p>
+                            Speaker and audio troubleshooting.
+                        </p>
+
+                        <button onclick="showSolution('sound')">
+                            View Solution →
+                        </button>
+                    </div>
+
+
+                    <div class="issue-card">
+                        <div class="issue-icon">🐌</div>
+
+                        <h3>Slow Computer</h3>
+
+                        <p>
+                            Basic performance troubleshooting.
+                        </p>
+
+                        <button onclick="showSolution('slow')">
+                            View Solution →
+                        </button>
+                    </div>
+
+
+                    <div class="issue-card">
+                        <div class="issue-icon">🔐</div>
+
+                        <h3>Login Problems</h3>
+
+                        <p>
+                            Account and password related issues.
+                        </p>
+
+                        <button onclick="showSolution('login')">
+                            View Solution →
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Solution -->
+
+            <section class="solution-box">
+
+                <div class="solution-header">
+
+                    <div>
+                        <span class="section-label">
+                            TROUBLESHOOTING
+                        </span>
+
+                        <h2 id="solution-title">
+                            Select an Issue
+                        </h2>
+                    </div>
+
+                </div>
+
+                <p id="solution-description">
+                    Click "View Solution" to see troubleshooting steps.
+                </p>
+
+                <ol id="solution-steps">
+
+                    <li>
+                        Select a technical issue above.
+                    </li>
+
+                </ol>
+
+            </section>
+
+
+            <!-- Support Request -->
+
+            <section id="support" class="panel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <span class="section-label">
+                            HELP DESK
+                        </span>
+
+                        <h2>Submit a Support Request</h2>
+
+                        <p>
+                            Create a ticket for technical assistance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="userName"
+                        placeholder="Your Name"
+                    >
+
+                    <select id="priority">
+
+                        <option value="">
+                            Select Priority
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="userIssue"
+                    class="full-input"
+                    placeholder="Describe your technical issue"
+                >
+
+
+                <button
+                    class="primary-button"
+                    onclick="submitRequest()"
+                >
+                    Create Support Ticket
+                </button>
+
+
+                <p id="requestMessage"></p>
+
+            </section>
+
+
+            <!-- Ticket Status -->
+
+            <section id="status" class="panel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <span class="section-label">
+                            TICKET MANAGEMENT
+                        </span>
+
+                        <h2>Check Ticket Status</h2>
+
+                        <p>
+                            Update the current status of a support ticket.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="ticketSearch"
+                        placeholder="Enter Ticket ID"
+                    >
+
+                    <select id="ticketStatus">
+
+                        <option value="Open">
+                            Open
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                        <option value="Resolved">
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="updateStatus()"
+                >
+                    Update Ticket Status
+                </button>
+
+
+                <p id="statusMessage"></p>
+
+            </section>
+
+
+            <footer>
+
+                <p>
+                    IT Support Desk • Technical Support Portal
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
